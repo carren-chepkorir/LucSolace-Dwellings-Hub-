@@ -6,6 +6,9 @@ import ReactDOM from "react-dom";
 import { render } from "react-dom/client";
 import { createRoot } from "react-dom/client";
 import "./index.css";
+import SearchResults from "./Pages/SearchResults";
+import HouseFilter from "./Components/HouseFilter";
+import HouseQuery from "./Pages/HouseQuery";
 
 function App() {
   const [allHouses, setAllHouses] = useState([]);
@@ -32,10 +35,19 @@ function App() {
       <React.StrictMode>
         <div>
           <Header Subtitle="Providing Houses Around Nairobi" />
+          <HouseFilter allHouses={allHouses} />
           <Routes>
             <Route
               path="/"
               element={<FeaturedHouse house={randomFeaturedHouse} />}
+            />
+            <Route
+              path="/SearchResults/:country"
+              element={<SearchResults allHouses={allHouses} />}
+            />
+            <Route
+              path="/house/:id"
+              element={<HouseQuery allHouses={allHouses} />}
             />
           </Routes>
         </div>
