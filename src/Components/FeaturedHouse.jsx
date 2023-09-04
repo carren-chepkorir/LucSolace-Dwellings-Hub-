@@ -5,9 +5,13 @@ const FeaturedHouse = ({ house }) => {
   if (house) {
     return (
       <div>
-        <div className="row featuredHouse">
+        <div
+          className="row container-fluid bg:{#fd7e14}"
+          style={{ height: "50px" }}
+        >
           <h3 className="col-md-12 text-center">Featured House</h3>
         </div>
+        {/* below we are rendering a function containing info of featured house */}
         <House house={house} />
       </div>
     );

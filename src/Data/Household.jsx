@@ -9,12 +9,16 @@ const House = ({ house }) => {
       </div>
       <div className="row">
         <div className="col-md-7">
-          <img src="" alt="hey house here" />
+          <img
+            className="image-fluid rounded "
+            style={{ height: "300px", width: "600px" }}
+            src={house.photo}
+          />
         </div>
-      </div>
-      <div className="col-md-5">
-        <p className="price">${house.price}</p>
-        <p>{house.description}</p>
+        <div className="col-md-4">
+          <p className="price">${house.price}</p>
+          <p>{house.description}</p>
+        </div>
       </div>
     </div>
   );
